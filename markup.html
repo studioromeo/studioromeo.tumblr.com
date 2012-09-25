@@ -41,11 +41,107 @@
 				<article>
 					{block:Title}
 						<h1><a href="{Permalink}"title ="{Title}">{Title}</a></h1>
+					{/block:Title}
 					<h2>Text Post</h2>
 					<p>{Body}</p>
+					<br/>
+					{block:Source}
+						<p>{Source}</p>
+					{/block:Source}
 				</article>
 			{/block:Text}
+
+			{block:Photo}
+			 <article>
+				<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+				{block:Caption}
+					<p>{Caption}</p>
+				{/block:Caption}
+				<br/>
+				{block:Source}
+					<p>{Source}</p>
+				{/block:Source}
+			 </article>
+		  {/block:Photo}
+
+		{block:Photoset}
+			<article>
+				{Photoset-500}
+				{block:Caption}
+					<p>{Caption}</p>
+				{/block:Caption}
+				<br/>
+				{block:Source}
+					<p>{Source}</p>
+				{/block:Source}
+			</article>
+		{/block:Photoset}
+
+		{block:Quote}
+			<article>
+				<blockquote>{Quote}</blockquote>
+				{block:Source}
+					<p>{Source}</p>
+				{/block:Source}
+			</article>
+		{/block:Quote}
+
+		{block:Link}
+			<article>
+				<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>
+				{block:Description}
+					<p>{Description}</p>
+				{/block:Description}
+			</article>
+		{/block:Link}
+
+		{block:Chat}
+			<article>
+				{block:Title}
+					<h1><a href="{Permalink}">{Title}</a></h1>
+				{/block:Title}
+				<ul class="chat">
+					{block:Lines}
+						<li class="{Alt} user_{UserNumber}">
+							{block:Label}
+								<span class="label">{Label}</span>
+							{/block:Label}
+
+							{Line}
+						</li>
+					{/block:Lines}
+				</ul>
+			</article>
+		{/block:Chat}
+
+		{block:Video}
+			<article>
+				{Video-500}
+				{block:Caption}
+					<p>{Caption}</p>
+				{/block:Caption}
+			</article>
+		{/block:Video}
+
+		{block:Audio}
+			<article>
+				{AudioPlayerBlack}
+				{block:Caption}
+					<p>{Caption}</p>
+				{/block:Caption}
+			</article>
+		{/block:Audio}
+
 		{/block:Posts}
 	</section>
+	<footer>
+		{block:PreviousPage}
+			<a href="{PreviousPage}">&#171; Previous</a>
+		{/block:PreviousPage}
+
+		{block:NextPage}
+			<a href="{NextPage}">Next &#187;</a>
+		{/block:NextPage}
+	</footer>
 </body>
 </html>
