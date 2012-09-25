@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{Title}</title>
+
+	<meta name="author" content="Robert Rhoades">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{block:Description}
+    	<meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <meta property="og:image" content="/img/logo.png" />
+
+	<!--[if lt IE 9]>
+	<script src="/js/html5shiv.js"></script>
+	<![endif]-->
+	<link rel="shortcut icon" href="{Favicon}">
+	<link href='http://studioromeo.co.uk/css/style.min.css?v=20120921' rel='stylesheet'>
+	<link href='http://fonts.googleapis.com/css?family=Arvo:700|Open+Sans:400,700' rel='stylesheet'>
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+</head>
+<body>
+	<aside>
+		<div id="logo">
+			<a href="/" title="{Title}">{Title}</a>
+		</div>
+		{block:Description}
+			<p>{Description}</p>
+		{/block:Description}
+		<ul>
+			<li><a href="http://studioromeo.co.uk" class="icon-house" id="website">?</a></li>
+			<li><a href="http://last.fm/user/studioromeo" class="icon-lastfm" id="lastfm"></a></li>
+			<li><a href="http://twitter.com/studioromeo" class="icon-twitter-bird" id="twitter"></a></li>
+			<li><a href="http://github.com/studioromeo" class="icon-github" id="github"></a></li>
+			<li><a href="https://plus.google.com/u/0/101733486307310199404?rel=author" rel="author" class="icon-google-circles" id="google"></a></li>
+		</ul>
+	</aside>
+	<section>
+		{block:Posts}
+			{block:Text}
+				<article>
+					{block:Title}
+						<h1><a href="{Permalink}"title ="{Title}">{Title}</a></h1>
+					<h2>Text Post</h2>
+					<p>{Body}</p>
+				</article>
+			{/block:Text}
+		{/block:Posts}
+	</section>
+</body>
+</html>
