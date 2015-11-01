@@ -1,145 +1,188 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>{Title}</title>
-
-	<meta name="author" content="Robert Rhoades">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{block:Description}
-    	<meta name="description" content="{MetaDescription}" />
-    {/block:Description}
-
-	<!--[if lt IE 9]>
-	<script src="/js/html5shiv.js"></script>
-	<![endif]-->
-	<link rel="shortcut icon" href="{Favicon}">
-	<link href='http://studioromeo.co.uk/css/style.min.css?v=20120921' rel='stylesheet'>
-	<link href='http://fonts.googleapis.com/css?family=Arvo:700|Open+Sans:400,700' rel='stylesheet'>
-	<link rel="alternate" type="application/rss+xml" href="{RSS}">
-</head>
-<body>
-	<aside>
-		<div id="logo">
-			<a href="/" title="{Title}">{Title}</a>
-		</div>
+	<head>
+		<meta charset="utf-8">
+		<title>{Title}</title>
+	
+		<meta name="author" content="Robert Rhoades">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{block:Description}
-			<p>{Description}</p>
-		{/block:Description}
-		<ul>
-			<li><a href="http://last.fm/user/studioromeo" class="icon-lastfm" id="lastfm"></a></li>
-			<li><a href="http://twitter.com/studioromeo" class="icon-twitter-bird" id="twitter"></a></li>
-			<li><a href="http://github.com/studioromeo" class="icon-github" id="github"></a></li>
-			<li><a href="https://plus.google.com/u/0/101733486307310199404?rel=author" rel="author" class="icon-google-circles" id="google"></a></li>
-		</ul>
-	</aside>
-	<section>
-		{block:Posts}
-			{block:Text}
-				<article>
-					{block:Title}
-						<h1><a href="{Permalink}"title ="{Title}">{Title}</a></h1>
-					{/block:Title}
-					<h2>Text Post</h2>
-					<p>{Body}</p>
-					<br/>
-					{block:Source}
-						<p>{Source}</p>
-					{/block:Source}
-				</article>
-			{/block:Text}
-
-			{block:Photo}
-			 <article>
-				<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-				{block:Caption}
-					<p>{Caption}</p>
-				{/block:Caption}
-				<br/>
-				{block:Source}
-					<p>{Source}</p>
-				{/block:Source}
-			 </article>
-		  {/block:Photo}
-
-		{block:Photoset}
-			<article>
-				{Photoset-500}
-				{block:Caption}
-					<p>{Caption}</p>
-				{/block:Caption}
-				<br/>
-				{block:Source}
-					<p>{Source}</p>
-				{/block:Source}
-			</article>
-		{/block:Photoset}
-
-		{block:Quote}
-			<article>
-				<blockquote>{Quote}</blockquote>
-				{block:Source}
-					<p>{Source}</p>
-				{/block:Source}
-			</article>
-		{/block:Quote}
-
-		{block:Link}
-			<article>
-				<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>
-				{block:Description}
-					<p>{Description}</p>
-				{/block:Description}
-			</article>
-		{/block:Link}
-
-		{block:Chat}
-			<article>
-				{block:Title}
-					<h1><a href="{Permalink}">{Title}</a></h1>
-				{/block:Title}
-				<ul class="chat">
-					{block:Lines}
-						<li class="{Alt} user_{UserNumber}">
-							{block:Label}
-								<span class="label">{Label}</span>
-							{/block:Label}
-
-							{Line}
-						</li>
-					{/block:Lines}
-				</ul>
-			</article>
-		{/block:Chat}
-
-		{block:Video}
-			<article>
-				{Video-500}
-				{block:Caption}
-					<p>{Caption}</p>
-				{/block:Caption}
-			</article>
-		{/block:Video}
-
-		{block:Audio}
-			<article>
-				{AudioPlayerBlack}
-				{block:Caption}
-					<p>{Caption}</p>
-				{/block:Caption}
-			</article>
-		{/block:Audio}
-
-		{/block:Posts}
-	</section>
-	<footer>
-		{block:PreviousPage}
-			<a href="{PreviousPage}">&#171; Previous</a>
-		{/block:PreviousPage}
-
-		{block:NextPage}
-			<a href="{NextPage}">Next &#187;</a>
-		{/block:NextPage}
-	</footer>
-</body>
+	    		<meta name="description" content="{MetaDescription}" />
+	    	{/block:Description}
+	
+		<!--[if lt IE 9]>
+		<script src="/js/html5shiv.js"></script>
+		<![endif]-->
+		<link rel="shortcut icon" href="{Favicon}">
+		<link href='http://www.studioromeo.co.uk/css/main.css?v=20151029' rel='stylesheet'>
+		<link href='http://fonts.googleapis.com/css?family=Arvo:700|Open+Sans:400,700' rel='stylesheet'>
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	</head>
+	<body>
+		<header>
+			<div id="logo">
+				<a href="/" title="{Title}">{Title}</a>
+			</div>
+			{block:Description}
+				<p>{Description}</p>
+			{/block:Description}
+			<ul>
+				<li><a href="http://last.fm/user/studioromeo" class="icon-lastfm" id="lastfm"></a></li>
+				<li><a href="http://twitter.com/studioromeo" class="icon-twitter-bird" id="twitter"></a></li>
+				<li><a href="http://github.com/studioromeo" class="icon-github" id="github"></a></li>
+				<li><a href="https://plus.google.com/u/0/101733486307310199404?rel=author" rel="author" class="icon-google-circles" id="google"></a></li>
+			</ul>
+		</header>
+		<section>
+			{block:Posts}
+				{block:Text}
+					<article>
+						{block:Title}
+							<h1><a href="{Permalink}"title ="{Title}">{Title}</a></h1>
+						{/block:Title}
+						<div>
+							<p>{Body}</p>
+							{block:Source}
+								<p>{Source}</p>
+							{/block:Source}
+						</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Text}
+	
+				{block:Photo}
+					<article>
+						<div>
+							<p>
+								<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+							</p>
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+							{block:Source}
+								<p>{Source}</p>
+							{/block:Source}
+						</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Photo}
+	
+				{block:Photoset}
+					<article>
+						<div>
+							{Photoset-500}
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+							{block:Source}
+								<p>{Source}</p>
+							{/block:Source}
+						</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Photoset}
+	
+				{block:Quote}
+					<article>
+						<div>
+							<blockquote>{Quote}</blockquote>
+							{block:Source}
+								<p>{Source}</p>
+							{/block:Source}
+						</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Quote}
+	
+				{block:Link}
+					<article>
+						<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>
+						<div>
+							{block:Description}
+								<p>{Description}</p>
+							{/block:Description}
+						</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Link}
+	
+				{block:Chat}
+					<article>
+						{block:Title}
+							<h1><a href="{Permalink}">{Title}</a></h1>
+						{/block:Title}
+						<div>
+							<ul class="chat">
+								{block:Lines}
+									<li class="{Alt} user_{UserNumber}">
+										{block:Label}
+											<span class="label">{Label}</span>
+										{/block:Label}
+										{Line}
+									</li>
+								{/block:Lines}
+							</ul>
+						</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Chat}
+	
+				{block:Video}
+					<article>
+						<div>
+							<p>
+								<div class="video">
+									{Video-500}
+								</div>
+							</p>
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+						</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Video}
+	
+				{block:Audio}
+					<article>
+						<div>
+							{AudioPlayerBlack}
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+							</div>
+						{block:Date}
+							<small class="right">Posted on <time datetime="{Timestamp}">{DayOfWeek}, {DayOfMonthWithZero} {Month} {Year}</time></small>
+						{/block:Date}
+					</article>
+				{/block:Audio}
+	
+			{/block:Posts}
+		</section>
+		<footer>
+			<nav>
+				{block:PreviousPage}
+					<a href="{PreviousPage}">&#171; Previous</a>
+				{/block:PreviousPage}
+	
+				{block:NextPage}
+					<a href="{NextPage}">Next &#187;</a>
+				{/block:NextPage}
+			</nav>
+		</footer>
+	</body>
 </html>
